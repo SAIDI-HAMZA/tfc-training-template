@@ -1,0 +1,18 @@
+{
+  "name": "TFC Training",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {},
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "HashiCorp.terraform",
+        "ms-azuretools.vscode-docker",
+        "humao.rest-client"
+      ]
+    }
+  },
+  "postCreateCommand": "terraform -version && aws --version || true"
+}
+
