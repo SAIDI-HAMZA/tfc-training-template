@@ -128,7 +128,11 @@ sudo apt-get update && sudo apt-get install -y jq
 Puis exécutez :
 
 ```bash
-curl   --header "Authorization: Bearer $(jq -r '."app.terraform.io".token' ~/.terraform.d/credentials.tfrc.json')"   https://app.terraform.io/api/v2/user
+curl -sS --max-time 20 \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/vnd.api+json" \
+  https://app.terraform.io/api/v2/account/details \
+| jq -r '.data.attributes | {username, email, "2fa_enabled": ."two-factor".enabled}'
 ```
 
 Vous devez obtenir un JSON contenant votre username, email, etc.
