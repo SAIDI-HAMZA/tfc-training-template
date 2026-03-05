@@ -123,25 +123,14 @@ lab2-workspaces
 
 # 🧩 Étape 3 — Migrer le Backend Local → Terraform Cloud
 
-Modifiez `main.tf` pour y ajouter le backend :
+Ajoutez le bloc de configuration suivant à la fin de votre fichier `main.tf` pour configurer l’intégration avec Terraform Cloud et ajouter le backend :
 
 ```hcl
-terraform {
-  cloud {
-    organization = "TON_ORGANIZATION_TFC"
+cloud {
+  organization = "TON_ORGANIZATION_TFC"
 
-    workspaces {
-      name = "lab2-workspaces"
-    }
-  }
-
-  required_version = ">= 1.5.0"
-
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-      version = "~> 5.0"
-    }
+  workspaces {
+    name = "lab2-workspaces"
   }
 }
 ```
