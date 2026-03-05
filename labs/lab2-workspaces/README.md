@@ -175,6 +175,38 @@ Dans votre Codespace :
 terraform plan
 terraform apply -auto-approve
 ```
+## Ajouter les identifiants AWS dans Terraform Cloud
+
+Lors du premier `terraform plan`, vous verrez une erreur indiquant que **les credentials AWS sont introuvables**.
+
+Cette erreur montre que Terraform n’exécute plus le plan **localement**, mais dans **Terraform Cloud**.
+
+Pour corriger cela, vous devez ajouter vos identifiants AWS **dans le workspace Terraform Cloud**.
+
+### Étapes
+
+1. Ouvrez votre workspace **lab2-workspaces** dans Terraform Cloud.
+
+2. Cliquez sur **Variables**.
+
+3. Dans la section **Environment Variables**, ajoutez les variables suivantes :
+
+```
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+AWS_REGION
+```
+
+4. **Remplacez les valeurs par les identifiants AWS qui vous ont été fournis.**
+
+5. Relancez ensuite la commande :
+
+```bash
+terraform plan
+terraform apply -auto-approve
+```
+
+Le run sera alors exécuté correctement dans **Terraform Cloud**.
 
 Vous verrez :
 
