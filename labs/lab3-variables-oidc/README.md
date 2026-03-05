@@ -185,42 +185,13 @@ AmazonS3FullAccess
 
 # 🧩 Étape 4 — Créer un Variable Set dans Terraform Cloud
 
-Dans Terraform Cloud :
-
-1. Menu **Variable Sets**  
-2. **Create variable set**  
-3. Nom :
+Dans Terraform Cloud → Workspace lab3-variables-oidc → Variables → Environment variables, ajoutez :
+```
+TFC_AWS_PROVIDER_AUTH = true
+TFC_AWS_RUN_ROLE_ARN = <remplacer par le Role ARN AWS fourni>
+AWS_REGION = eu-west-1 (ou la région du lab)
 
 ```
-aws-oidc
-```
-
-### Ajoutez ces variables d’environnement :
-
-#### 📌 `AWS_ROLE_ARN`
-```
-Key: AWS_ROLE_ARN
-Value: arn:aws:iam::<ACCOUNT_ID>:role/<NOM_ROLE>
-Category: environment variable
-Sensitive: off
-```
-
-#### 📌 `AWS_WEB_IDENTITY_TOKEN_FILE`
-```
-Key: AWS_WEB_IDENTITY_TOKEN_FILE
-Value: /tmp/web-identity-token
-Category: environment variable
-Sensitive: off
-```
-
-### Appliquer ce Variable Set au workspace :
-
-Cochez :
-
-```
-lab3-variables-oidc
-```
-
 ---
 
 # 🧩 Étape 5 — Tester les AWS Dynamic Credentials
