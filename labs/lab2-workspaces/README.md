@@ -13,8 +13,33 @@
 
 ---
 
-# 🧩 Étape 0 — Préparation dans votre Codespace
 
+## Configurer les identifiants AWS
+
+Avant d’exécuter Terraform, configurez vos identifiants AWS avec la commande suivante :
+
+```bash
+aws configure
+```
+
+Lorsque les informations sont demandées, **remplacez les valeurs par les identifiants AWS qui vous ont été fournis** :
+
+```
+AWS Access Key ID [None]: <remplacer par la clé fournie>
+AWS Secret Access Key [None]: <remplacer par la clé fournie>
+Default region name [None]: eu-west-3
+Default output format [None]: json
+```
+
+Vérifiez ensuite que la configuration fonctionne :
+
+```bash
+aws sts get-caller-identity
+```
+
+Si la commande retourne les informations du compte AWS, la configuration est correcte.
+
+# 🧩 Étape 0 — Préparation dans votre Codespace
 Dans votre Codespace :
 
 ```bash
