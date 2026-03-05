@@ -13,11 +13,12 @@ RUN apt-get update && apt-get install -y \
     ca-certificates \
     gnupg \
     vim \
+    nano \
     less \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Terraform
-RUN wget -O /tmp/terraform.zip https://releases.hashicorp.com/terraform/1.13.5/terraform_1.13.5_linux_amd64.zip \
+# Install Terraform 1.14.0
+RUN wget -O /tmp/terraform.zip https://releases.hashicorp.com/terraform/1.14.0/terraform_1.14.0_linux_amd64.zip \
     && unzip /tmp/terraform.zip -d /usr/local/bin \
     && rm /tmp/terraform.zip
 
