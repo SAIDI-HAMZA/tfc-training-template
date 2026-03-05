@@ -70,9 +70,9 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "demo" {
-  bucket = "tfc-lab2-${random_id.suffix.hex}"
+  tfc-lab2_add_your_name = "tfc-lab2-${random_id.suffix.hex}"
   tags = {
-    Name = "tfc-lab2"
+    Name = "tfc-lab2_add_your_name"
   }
 }
 
@@ -82,6 +82,7 @@ resource "random_id" "suffix" {
 ```
 
 ---
+⚠️ Remplacez le nom de bucket "tfc-lab2_add_your_name" par votre nom
 
 # 🧩 Étape 1 — Déploiement Local (Backend local)
 
